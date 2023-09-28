@@ -6,15 +6,26 @@ export class JwtAdapter {
 
   static generateToken(payload: any, duration: string = '2h') {
     return new Promise((resolve) => {
-      jwt.sign(payload, envs.JWT_SECRET, { expiresIn: duration }, (err, token) => {
-        if (err) return resolve(null);
+      jwt.sign(
+        payload,
+        envs.JWT_SECRET,
+        { expiresIn: duration },
+        (err, token) => {
+          if (err) return resolve(null);
 
-        resolve(token);
-      });
+          resolve(token);
+        }
+      );
     });
   }
 
   static validateToken(token: string) {
-    throw new Error('Method not implemented.');
+    return new Promise((resolve) => {
+      jwt.verify(token, envs.JWT_SECRET, (err, decoded) => {
+        if (err) return resolve(null);
+
+        resolve(decoded);
+      });
+    });
   }
 }
