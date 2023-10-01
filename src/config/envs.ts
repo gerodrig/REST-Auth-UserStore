@@ -11,6 +11,7 @@ export const envs = {
   MAILER_SERVICE: get('MAILER_SERVICE').required().asString(),
   MAILER_USER: get('MAILER_USER').required().asString(),
   MAILER_PASSWORD: get('MAILER_PASSWORD').required().asString(),
+  SEND_EMAILS: get('SEND_EMAILS').default('false').asBool(),
 
   WEBSERVICE_URL: get('WEBSERVICE_URL').required().asString(),
 };

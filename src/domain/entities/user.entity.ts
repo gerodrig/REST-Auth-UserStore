@@ -11,7 +11,7 @@ export class UserEntity {
     public img?: string
   ) {}
 
-  static fromObject(object: { [key: string]: any }) {
+  static fromObject(object: { [key: string]: any }): UserEntity {
     const { id, _id, name, email, isEmailVerified, password, role, img } =
       object;
 
