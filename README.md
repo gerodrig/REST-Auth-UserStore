@@ -9,4 +9,5 @@ Each step of its configuration has already been carried out earlier in the cours
 1. Clone .env.template to .env and configure the environment variables.
 2. Run npm install to install the dependencies.
 3. If a database is needed, configure the docker-compose.yml and run docker-compose up -d to launch the desired services.
-4. Run npm run dev to launch the project in development mode.
+4. Fill database with seed `npm run seed`. 
+5. Run npm run dev to launch the project in development mode.

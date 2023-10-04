@@ -18,11 +18,23 @@ const productSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: [true, 'User is required'],
+  },
   category: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Category',
     required: [true, 'Cateogry is required'],
+  },
+});
+
+productSchema.set('toJSON', {
+  virtuals: true,
+  versionKey: false,
+  transform: function (doc: any, ret: any) {
+    delete ret._id;
   },
 });
 
