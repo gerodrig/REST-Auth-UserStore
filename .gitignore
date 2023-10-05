@@ -8,3 +8,6 @@ node_modules/
 dist/
 build/
 coverage/
+
+# ignore all files inside uploads folder except folder and .gitkeep file
+!/uploads/**/
